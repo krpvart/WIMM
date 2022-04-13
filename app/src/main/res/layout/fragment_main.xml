@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.screens.MainFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/holder_account_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="center"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/cardview_account" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/consumption_account_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/holder_account_list"
+        tools:listitem="@layout/cardview_account" />
+
+    <LinearLayout
+        android:id="@+id/LLTransaction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:elevation="0dp"
+        android:orientation="vertical"
+        android:paddingTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/consumption_account_list">
+
+        <Spinner
+            android:id="@+id/holder_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:paddingBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/consumption_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:paddingBottom="8dp" />
+
+        <EditText
+            android:id="@+id/input_sum"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/add_tranaction_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:hint="Add"
+            android:text="Add transaction" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/show_transaction_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="@id/LLTransaction"
+        app:layout_constraintTop_toBottomOf="@id/LLTransaction"
+        android:text="Show tranasciotn"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
